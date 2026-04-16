@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ARISE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- FULLSCREEN EXIT BUTTON -->
+  <div id="exitFs" class="exit-fs hidden">✕</div>
+
+  <!-- MAIN UI (visible seulement la nuit) -->
+  <div id="app" class="container">
+    <div id="toggleSound" class="text-button">UNMUTE</div>
+  </div>
+
+  <!-- OFF SCREEN (visible hors plage horaire) -->
+  <div id="offScreen" class="off-screen hidden">OFF</div>
+
+  <audio id="audio" src="audio/arise.mp3" loop></audio>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

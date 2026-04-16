@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  color: rgb(255, 0, 0);
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* centre UI principale */
+.container {
+  text-align: center;
+}
+
+/* UNMUTE / MUTE */
+.text-button {
+  font-size: 60px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.text-button:hover {
+  opacity: 0.7;
+}
+
+/* fullscreen exit */
+.exit-fs {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.85;
+}
+
+.exit-fs:hover {
+  opacity: 1;
+}
+
+/* OFF screen */
+.off-screen {
+  font-size: 60px;
+  letter-spacing: 4px;
+}
+
+/* hidden utility */
+.hidden {
+  display: none;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .text-button {
+    font-size: 40px;
+  }
+
+  .exit-fs {
+    font-size: 22px;
+  }
+
+  .off-screen {
+    font-size: 40px;
+  }
+}
