@@ -8,8 +8,8 @@ const offScreen = document.getElementById("offScreen");
 /* =========================
    ⚙️ PARAMÈTRES MODIFIABLES
 ========================= */
-const NIGHT_START = 15; // heure de début (15h)
-const NIGHT_END = 6;    // heure de fin (6h)
+const NIGHT_START = 12;
+const NIGHT_END = 6;
 /* ========================= */
 
 let isPlaying = false;
@@ -33,7 +33,6 @@ function updateUI() {
     app.classList.add("hidden");
     offScreen.classList.remove("hidden");
 
-    // sécurité : stop audio + exit fullscreen
     audio.pause();
     isPlaying = false;
     toggleBtn.textContent = "UNMUTE";
@@ -44,10 +43,7 @@ function updateUI() {
   }
 }
 
-/* initial check */
 updateUI();
-
-/* check toutes les minutes */
 setInterval(updateUI, 60000);
 
 /* 🎵 SOUND + FULLSCREEN */
