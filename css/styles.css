@@ -1,8 +1,19 @@
 body {
   margin: 0;
   height: 100vh;
-  background: black;
-  color: rgb(255, 0, 0);
+
+  /* 🔥 gradient corrigé (plus vif) */
+  background: linear-gradient(
+    to top,
+    #ff1a1a 0%,
+    #ff1a1a 30%,
+    #ff6666 65%,
+    #ffffff 100%
+  );
+
+  background-color: #ff1a1a;
+
+  color: white;
   font-family: Arial, sans-serif;
 
   display: flex;
@@ -10,25 +21,37 @@ body {
   align-items: center;
 }
 
-/* centre UI principale */
+/* centre */
 .container {
   text-align: center;
 }
 
-/* UNMUTE / MUTE */
-.text-button {
+/* texte principal + OFF */
+.text-button,
+.off-screen {
   font-size: 60px;
-  letter-spacing: 2px;
+  font-weight: 700; /* ✅ vrai bold */
+  letter-spacing: 3px;
+  text-shadow: 0 0 2px rgba(255,255,255,0.2);
+}
+
+/* interaction */
+.text-button {
   cursor: pointer;
   user-select: none;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.1s ease;
 }
 
 .text-button:hover {
   opacity: 0.7;
 }
 
-/* fullscreen exit */
+.text-button:active {
+  opacity: 0.6;
+  transform: scale(0.97);
+}
+
+/* bouton exit fullscreen */
 .exit-fs {
   position: absolute;
   top: 15px;
@@ -43,28 +66,21 @@ body {
   opacity: 1;
 }
 
-/* OFF screen */
-.off-screen {
-  font-size: 60px;
-  letter-spacing: 4px;
-}
-
-/* hidden utility */
+/* hidden */
 .hidden {
   display: none;
 }
 
 /* mobile */
-@media (max-width: 800px) {
-  .text-button {
-    font-size: 40px;
+@media (max-width: 600px) {
+  .text-button,
+  .off-screen {
+    font-size: 48px;
   }
 
   .exit-fs {
-    font-size: 22px;
-  }
-
-  .off-screen {
-    font-size: 40px;
+    font-size: 28px;
+    top: 12px;
+    right: 12px;
   }
 }
